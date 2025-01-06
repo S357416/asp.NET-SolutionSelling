@@ -1,0 +1,49 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@model IEnumerable<SolutionSelling.Models.CartReport>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="banner">
+    <h1 style="font-family: Vivaldi; font-size: 100px">"We can sell your dreams"</h1>
+
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <p style="font-size: 25px"> Hello, @User.Identity.Name! Welcome back.</p>
+    }
+    else
+    {
+        <p style="font-size: 25px">Welcome, Guest!</p>
+    }
+
+</div>
+
+<p></p>
+<p></p>
+<p></p>
+
+@if (SignInManager.IsSignedIn(User))
+{
+<h2>Purchase Report:</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Buyer</th>
+            <th>Total Amount Spent</th>
+        </tr>
+    </thead>
+    <tbody>
+            @foreach (var report in ViewBag.BuyerReports)
+        {
+            <tr>
+                <td>@report.Buyer</td>
+                <td>$@report.TotalSpent</td>
+            </tr>
+        }
+    </tbody>
+</table>
+    <a asp-controller="Cart" asp-action="Report" class="btn">More Details</a>
+}

@@ -1,0 +1,49 @@
+﻿@model IEnumerable<SolutionSelling.Models.CartReport>
+
+@{
+    ViewData["Title"] = "Purchase Report";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Buyer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Item)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalAmount)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var report in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => report.Buyer)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => report.Item)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => report.Quantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => report.TotalAmount)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p>
+    <a asp-controller="Home" asp-action="" class="btn">Back to Home</a>
+</p>

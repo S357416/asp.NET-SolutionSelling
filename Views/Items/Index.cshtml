@@ -1,0 +1,70 @@
+﻿@model IEnumerable<SolutionSelling.Models.Items>
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+
+@{
+    ViewData["Title"] = "My Items";
+}
+
+<h1>My Items</h1>
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <p>
+        <a asp-action="Create" class="btn">Create New</a>
+    </p>
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Seller)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Item_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Condition)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seller)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Item_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Condition)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn">Edit</a>
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn">Details</a>
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn">Delete</a>
+            </td>
+            </tr>
+}
+    </tbody>
+</table>

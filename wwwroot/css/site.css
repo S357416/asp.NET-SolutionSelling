@@ -1,0 +1,198 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+/* General body styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #007bff;
+}
+
+/* Table Styles */
+.table {
+    width: 100%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+    .table thead th {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px;
+        text-align: left;
+        border-bottom: 2px solid #0056b3;
+    }
+
+    .table tbody td {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .table tbody tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    .table a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+        .table a:hover {
+            text-decoration: underline;
+        }
+
+/* Button Styles */
+a[asp-action="Create"] {
+    display: inline-block;
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+    a[asp-action="Create"]:hover {
+        background-color: #218838;
+    }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .table, .table thead, .table tbody, .table th, .table td, .table tr {
+        display: block;
+        width: 100%;
+    }
+
+        .table thead {
+            display: none;
+        }
+
+        .table tr {
+            margin-bottom: 15px;
+        }
+
+        .table td {
+            padding-left: 50%;
+            position: relative;
+            text-align: right;
+            border-bottom: 1px solid #ddd;
+        }
+
+            .table td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 0;
+                width: 50%;
+                padding-left: 15px;
+                font-weight: bold;
+                text-align: left;
+            }
+}
+
+/* General button styles */
+/* General button styles for links */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff !important; /* White text, overriding any blue link color */
+    background-color: #007bff; /* Blue background */
+    border: none;
+    border-radius: 4px;
+    text-decoration: none !important; /* Remove underline */
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+    /* Hover effect for button links */
+    .btn:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+        color: #fff !important; /* Ensure the text stays white */
+        text-decoration: none !important; /* Ensure no underline on hover */
+    }
+
+/* Danger button (Delete) */
+.btn-danger {
+    background-color: #ff4c4c; /* Red background */
+    color: #fff !important;
+}
+
+    .btn-danger:hover {
+        background-color: #d93838;
+    }
+
+/* Success button (Purchase) */
+.btn-success {
+    background-color: #28a745; /* Green background */
+    color: #fff !important;
+}
+
+    .btn-success:hover {
+        background-color: #218838;
+    }
+
+.banner {
+    position: relative;
+    background-image: url('/images/ecommerce-banner.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 50px 0; /* Adjust the padding as needed */
+    color: white; /* Text color */
+    text-align: center;
+}
+
+    .banner::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
+        z-index: 0; /* Ensure the overlay is below the text */
+    }
+
+    .banner h1,
+    .banner p {
+        position: relative; /* Ensure text appears above the overlay */
+        z-index: 1;
+        color: white;
+    }
+
+.footer-image {
+    width: 50px; /* Set the desired width */
+    height: auto; /* Maintain aspect ratio */
+}

@@ -1,0 +1,12 @@
+﻿@model IEnumerable<SolutionSelling.Models.CartItem>
+@{
+    ViewData["Title"] = "Checkout Confirmation";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h2>Checkout Complete</h2>
+
+<p>Thank you for your purchase! Your order has been successfully processed.</p>
+
+<a asp-controller="Items" asp-action="allitems" class="btn">Continue Shopping</a>
